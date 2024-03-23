@@ -49,15 +49,15 @@ func CurrentDateLocal() (Date, error) {
 
 func AssertDate(day Day, month Month, year Year) error {
 	if year < -MAX_YEAR || year == 0 || year > MAX_YEAR {
-		return fmt.Errorf("The absolute year value %v is out of bounds [1..%v]", year, MAX_YEAR)
+		return fmt.Errorf("the absolute year value %v is out of bounds [1..%v]", year, MAX_YEAR)
 	}
 	if month < 1 || month > 12 {
-		return fmt.Errorf("The month value %v is out of bounds [1..12]", month)
+		return fmt.Errorf("the month value %v is out of bounds [1..12]", month)
 	}
 
 	var maxDay = DaysInMonth(month, year)
 	if day < 1 || day > maxDay {
-		return fmt.Errorf("The day value %v is out of bounds [1..%v]", day, maxDay)
+		return fmt.Errorf("the day value %v is out of bounds [1..%v]", day, maxDay)
 	}
 
 	return nil
